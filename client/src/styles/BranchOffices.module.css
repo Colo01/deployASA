@@ -1,0 +1,61 @@
+/* Styles specific to BranchOffices */
+.mainContainer {
+  background-image: url(../../public/Background-login.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.contentContainer {
+  margin: 0 auto;
+  max-width: 1600px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.tableContainer {
+  margin-top: 1rem;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.buttons {
+  background-color: #5a2e26;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons:hover {
+  background-color: #5a2e26;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contentContainer {
+    padding: 1rem;
+  }
+
+  .buttonsContainer {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .buttons {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}

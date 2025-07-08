@@ -1,0 +1,82 @@
+/* Styles specific to OfficeDetails view */
+.mainContainer {
+  background-image: url(../../public/Background-login.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: auto;
+}
+
+.contentContainer {
+  width: 50%;
+  margin-top: 25rem;
+  max-width: 1600px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.dataContainer {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.leftDataContainer,
+.rightDataContainer {
+  flex: 1;
+}
+
+.generalContainer {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.generalContainerTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #5a2e26;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.buttons {
+  background-color: #5a2e26;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 2rem;
+}
+
+.buttons:hover {
+  background-color: #5a2e26;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contentContainer {
+    padding: 1rem;
+  }
+
+  .dataContainer {
+    flex-direction: column;
+  }
+}

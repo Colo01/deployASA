@@ -1,0 +1,106 @@
+.mainContainer {
+  background-image: url(../../public/Background-login.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; /* Permite que crezca según el contenido */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow: hidden; /* Evita desbordamientos */
+  flex-direction: column; /* Asegura que el contenido se mantenga alineado */
+}
+
+.contentContainer {
+  width: 90%; /* Ajusta el ancho para que no se desborde */
+  max-width: 1600px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: calc(100vh - 100px); /* Ajusta la altura sin desbordar */
+}
+
+.tableContainer {
+  margin-top: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  max-height: 60vh; /* Limitar la altura de la tabla */
+}
+
+/* Estilos de la tabla */
+.bootstrap-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+.bootstrap-table thead th {
+  background-color: #5a2e26;
+  color: white;
+  text-align: center;
+}
+
+.bootstrap-table tbody td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.bootstrap-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.bootstrap-table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+/* Estilo de los botones */
+.attendedBtn,
+.absentBtn {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.attendedBtn {
+  background-color: #28a745;
+}
+
+.absentBtn {
+  background-color: #dc3545;
+}
+
+.attendedBtn:hover {
+  background-color: #218838;
+}
+
+.absentBtn:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+  .contentContainer {
+    padding: 1rem;
+  }
+
+  .bootstrap-table th[data-field="actions"],
+  .bootstrap-table td[data-field="actions"] {
+    min-width: 120px;
+  }
+
+  .attendedBtn,
+  .absentBtn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+  }
+}

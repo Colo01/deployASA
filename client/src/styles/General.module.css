@@ -1,0 +1,123 @@
+/* General layout and structure */
+.mainContainer {
+  background-image: url(../../public/Background-login.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.logoContainer img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 15px;
+  background: #5a2e26c7;
+}
+
+.contentContainer {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  max-width: 500px;
+  width: 100%;
+}
+
+.boton {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.boton button {
+  background-color: #5a2e26;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.boton button:hover {
+  background-color: #5a2e26;
+}
+
+.unregistred {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.unregistred p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.unregistred a {
+  color: #5a2e26;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.unregistred a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contentContainer {
+    padding: 1rem;
+  }
+
+  .logoContainer img {
+    max-width: 120px;
+  }
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .flex-center {
+    flex-direction: column; /* Cambiar a apilado en pantallas pequeñas */
+  }
+
+  .mt-2 {
+    margin-top: 1.5rem;
+  }
+
+  .mb-2 {
+    margin-bottom: 1.5rem;
+  }
+}

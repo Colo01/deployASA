@@ -1,0 +1,70 @@
+/* Navbar container */
+.navbar {
+  width: 100%;
+  background-color: #4a1c07;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  height: 70px; /* Reducimos la altura */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px groove #f5a623; /* Se especifica el estilo 'solid' */
+}
+
+/* Sección izquierda (Logo y saludo) */
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Espaciado entre logo y saludo */
+}
+
+/* Estilo del logo */
+.logo {
+  height: 3rem;
+}
+
+/* Texto estático "Hola [usuario]" */
+.userGreeting {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* Menú de navegación */
+.menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.menuItem {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.menuItem:hover {
+  color: #f5a623;
+  transform: scale(1.1); /* Efecto de agrandado */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar {
+    height: 60px;
+    padding: 0 1rem;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .menu {
+    gap: 0.8rem;
+  }
+
+  .menuItem {
+    font-size: 0.9rem;
+  }
+}

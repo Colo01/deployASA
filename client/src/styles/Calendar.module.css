@@ -1,0 +1,128 @@
+/* General container styles */
+.mainContainer {
+  background-image: url(../../public/Background-login.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow-y: auto;
+  flex-direction: column;
+}
+
+/* Content box styles */
+.contentContainer {
+  width: 100%;
+  max-width: 1600px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: calc(100vh - 100px);
+}
+
+/* Table container styles */
+.tableContainer {
+  margin-top: 1rem;
+  max-height: 70vh;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styles */
+.bootstrap-table {
+  width: 100%;
+  margin: auto;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+.bootstrap-table thead th {
+  background-color: #5a2e26;
+  color: white;
+  text-align: center;
+}
+
+.bootstrap-table tbody td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.bootstrap-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.bootstrap-table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+/* Buttons */
+.attendedBtn,
+.absentBtn {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.attendedBtn {
+  background-color: #28a745;
+}
+
+.absentBtn {
+  background-color: #dc3545;
+}
+
+.attendedBtn:hover {
+  background-color: #218838;
+}
+
+.absentBtn:hover {
+  background-color: #c82333;
+}
+
+/* Primary button styles */
+.bootstrap-table .btn-primary {
+  background-color: #5a2e26;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.bootstrap-table .btn-primary:hover {
+  background-color: #4a241e;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .contentContainer {
+    padding: 1rem;
+  }
+
+  .bootstrap-table th[data-field="actions"],
+  .bootstrap-table td[data-field="actions"] {
+    min-width: 120px;
+  }
+
+  .attendedBtn,
+  .absentBtn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}

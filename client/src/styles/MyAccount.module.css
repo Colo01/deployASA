@@ -1,0 +1,186 @@
+.mainContainer {
+  background-image: url(../../public/Background-login.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow-y: auto;
+  flex-direction: column;
+}
+
+/* Content box styles */
+.contentContainer {
+  width: 100%;
+  max-width: 1600px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: calc(100vh - 100px);
+}
+
+.title {
+  font-size: 2rem;
+  color: #5a2e26;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.profileImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .profileImage {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .profileImage {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.userDetails {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas por defecto */
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  ul {
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+  }
+}
+
+li {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  text-align: left;
+}
+
+li strong {
+  color: #5a2e26;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap; /* Permite que los botones se apilen */
+}
+
+.buttons {
+  background-color: #5a2e26;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  min-width: 120px;
+  text-align: center;
+}
+
+.buttons:hover {
+  background-color: #3e1c18;
+}
+
+@media (max-width: 768px) {
+  .buttonsContainer {
+    flex-direction: column; /* Apila los botones en pantallas pequeñas */
+    align-items: center;
+  }
+
+  .buttons {
+    width: 100%; /* Los botones ocupan todo el ancho */
+  }
+}
+
+@media (max-width: 576px) {
+  .buttons {
+    font-size: 0.9rem; /* Tamaño de fuente reducido en pantallas muy pequeñas */
+    padding: 0.5rem; /* Ajuste de espaciado */
+  }
+}
+
+/* Estilo para los campos de entrada, incluido el campo de fecha */
+input[type="date"],
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s;
+}
+
+input[type="date"]:focus,
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #5a2e26;
+  box-shadow: 0 0 4px rgba(90, 46, 38, 0.3);
+}
+
+/* Estilo para mensajes de error */
+.invalid-feedback {
+  color: #d9534f;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Ajustes adicionales para campos en pantallas pequeñas */
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  textarea {
+    font-size: 0.9rem; /* Reduce el tamaño de fuente */
+    padding: 0.4rem; /* Reduce el espaciado */
+  }
+}
+
+@media (max-width: 576px) {
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  textarea {
+    font-size: 0.85rem; /* Tamaño aún más pequeño */
+  }
+}
+
+textarea {
+  resize: none; /* Desactiva el redimensionamiento en pantallas pequeñas */
+}

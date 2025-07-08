@@ -1,0 +1,228 @@
+/* Navbar container */
+.navbar {
+  width: 100%;
+  background-color: #4a1c07;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  height: 5rem; /* Reducimos la altura */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px groove #f5a623; /* Se especifica el estilo 'solid' */
+}
+
+/* Sección izquierda (Logo y saludo) */
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Espaciado entre logo y saludo */
+}
+
+/* Estilo del logo */
+.logo {
+  height: 3rem;
+}
+
+/* Texto de bienvenida */
+.userGreeting {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* Menú de navegación */
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menuItem {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.menuItem:hover {
+  color: #f5a623;
+  transform: scale(1.1); /* Efecto de agrandado */
+}
+
+/* Botones Navbar */
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.loginBtn {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.loginBtn:hover {
+  background: white;
+  color: #4a1c07;
+}
+
+.registerBtn {
+  background: #ff9900;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.registerBtn:hover {
+  background: #b16b02;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar {
+    height: 60px;
+    padding: 0 1rem;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .menu {
+    gap: 0.8rem;
+  }
+
+  .menuItem a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Contenedor de la sección Hero */
+.contenedor {
+  background-image: url(../../public/Background-login.jpg); /* Ruta de tu imagen de fondo */
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh; /* En lugar de height: 100vh */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+/* Overlay con blur */
+.blurOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px); /* Efecto de blur */
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
+  z-index: 1; /* Lo coloca por encima de la imagen */
+}
+
+/* Contenedor interno con el texto */
+.wrap {
+  position: relative;
+  z-index: 2; /* Coloca el texto por encima del overlay */
+}
+
+/* Estilo del cuadro que contiene los elementos */
+.box {
+  max-width: 75rem;
+  padding: 2rem;
+}
+
+/* Estilo del span */
+.box span {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* Estilo del título */
+.box h1 {
+  color: #f5a623;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* Estilo del subtítulo */
+.box p {
+  font-size: 1.2rem;
+}
+
+/* Secciones */
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.textContent {
+  flex: 1;
+  text-align: left;
+}
+
+.textContent h2 {
+  font-size: 2.5rem;
+  color: #4a1c07;
+  margin-bottom: 1rem;
+}
+
+.textContent p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.imageContent {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.sectionImage {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .textContent {
+    order: 2;
+  }
+
+  .imageContent {
+    order: 1;
+  }
+}
