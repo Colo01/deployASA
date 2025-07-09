@@ -8,6 +8,8 @@ import paginationFactory from "react-bootstrap-table2-paginator";
 import Notiflix from "notiflix";
 import style from "../styles/Users.module.css";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const OfficeOperator = () => {
   const [appointments, setAppointments] = useState([]);
   const [load, setLoad] = useState(true);
@@ -18,9 +20,7 @@ const OfficeOperator = () => {
 
   const loadAppointments = async () => {
     try {
-      const response = await axios.get(
-        "https://deployasa.onrender.com/api/appointment/all"
-      );
+      const response = await axios.get(`${API_URL}/api/appointment/all`);
       const appointmentData = response.data.data.map((appointment) => ({
         _id: appointment._id,
         user: `${appointment.user?.fname || "N/A"} ${
@@ -67,12 +67,9 @@ const OfficeOperator = () => {
       "No",
       () => {
         axios
-          .put(
-            `https://deployasa.onrender.com/api/appointment/confirmAttendance`,
-            {
-              appointmentId: id,
-            }
-          )
+          .put(`${API_URL}/api/appointment/confirmAttendance`, {
+            appointmentId: id,
+          })
           .then(() => {
             Notiflix.Notify.success("Asistencia confirmada con éxito.");
             setLoad(!load);
@@ -96,7 +93,7 @@ const OfficeOperator = () => {
       "No",
       () => {
         axios
-          .put(`https://deployasa.onrender.com/api/appointment/markAbsent`, {
+          .put(`${API_URL}/api/appointment/markAbsent`, {
             appointmentId: id,
           })
           .then(() => {

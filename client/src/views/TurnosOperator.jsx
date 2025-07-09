@@ -7,6 +7,7 @@ import axios from "axios";
 import { Confirm } from "notiflix/build/notiflix-confirm-aio";
 import style from "../styles/Users.module.css";
 
+const API_URL = process.env.REACT_APP_API_URL;
 const TurnosOperator = () => {
   const [appointments, setAppointments] = useState([]);
   const [error, setError] = useState(null);
@@ -15,14 +16,11 @@ const TurnosOperator = () => {
     const fetchAppointments = async () => {
       try {
         const token = JSON.parse(localStorage.getItem("user")).data.token;
-        const response = await axios.get(
-          "https://deployasa.onrender.com/api/admin/appointments",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const response = await axios.get(`${API_URL}/api/admin/appointments`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
         console.log("Datos recibidos en el frontend:", response.data.data);
 
@@ -52,7 +50,7 @@ const TurnosOperator = () => {
         try {
           const token = JSON.parse(localStorage.getItem("user")).data.token;
           await axios.put(
-            `https://deployasa.onrender.com/api/admin/appointments/${id}/mark`,
+            `${API_URL}/api/admin/appointments/${id}/mark`,
             { action },
             {
               headers: {

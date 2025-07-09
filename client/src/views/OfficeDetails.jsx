@@ -14,6 +14,7 @@ import { Confirm } from "notiflix/build/notiflix-confirm-aio";
 
 // 🚀 Aquí cambiamos la importación para unificar estilos
 import style from "../styles/Users.module.css";
+const API_URL = process.env.REACT_APP_API_URL;
 
 const OfficeDetails = ({ office, selectOffice }) => {
   // console.log(office);
@@ -56,20 +57,20 @@ const OfficeDetails = ({ office, selectOffice }) => {
       () => {
         axios
           .put(
-            `https://deployasa.onrender.com/api/branchOffice/admin/${payload.id}/${office._id}`,
+            `${API_URL}/api/branchOffice/admin/${payload.id}/${office._id}`,
             values
           )
           .then(() => {
             axios
               .put(
-                `https://deployasa.onrender.com/api/branchOffice/admin/${payload.id}/showBranch/${office._id}`,
+                `${API_URL}/api/branchOffice/admin/${payload.id}/showBranch/${office._id}`,
                 selectedOperator
               )
               .then((res) => console.log(res));
           })
           .then(() => {
             axios
-              .get(`https://deployasa.onrender.com/api/branchOffice/showBranch`)
+              .get(`${API_URL}/api/branchOffice/showBranch`)
               .then((res) => res.data.data)
               .then(
                 (updatedOffices) =>
@@ -88,9 +89,7 @@ const OfficeDetails = ({ office, selectOffice }) => {
 
   const loadAssignedOperator = () => {
     axios
-      .get(
-        `https://deployasa.onrender.com/api/users/admin/${payload.id}/showUsers`
-      )
+      .get(`${API_URL}/api/users/admin/${payload.id}/showUsers`)
       .then((res) => {
         return res.data.data;
       })
@@ -108,7 +107,7 @@ const OfficeDetails = ({ office, selectOffice }) => {
   const loadOperatorsList = () => {
     axios
       .get(
-        `https://deployasa.onrender.com/api/branchOffice/admin/${payload.id}/showBranch/${office._id}/operator`
+        `${API_URL}/api/branchOffice/admin/${payload.id}/showBranch/${office._id}/operator`
       )
       .then((res) => {
         console.log(res.data.data);

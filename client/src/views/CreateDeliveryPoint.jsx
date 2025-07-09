@@ -10,6 +10,8 @@ import { Report } from "notiflix/build/notiflix-report-aio";
 
 import style from "../styles/OfficeDetails.module.css";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const CreateDeliveryPoint = () => {
   const token = JSON.parse(localStorage.getItem("user")).data.token;
   const payload = parseJwt(token);
@@ -17,10 +19,7 @@ const CreateDeliveryPoint = () => {
 
   const handleSubmit = (values) => {
     axios
-      .post(
-        `https://deployasa.onrender.com/api/deliveryPoint/admin/${payload.id}/add`,
-        values
-      )
+      .post(`${API_URL}/api/deliveryPoint/admin/${payload.id}/add`, values)
       .then((res) => {
         console.log("Punto de entrega creado:", res.data);
         Report.success(

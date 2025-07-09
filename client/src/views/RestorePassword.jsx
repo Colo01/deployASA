@@ -9,6 +9,8 @@ import parseJwt from "../hooks/parseJwt";
 import axios from "axios";
 import { Report } from "notiflix/build/notiflix-report-aio";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function RestorePassword() {
   const navigate = useNavigate();
 
@@ -33,7 +35,7 @@ function RestorePassword() {
     console.log(resetToken);
 
     axios
-      .put(`https://deployasa.onrender.com/api/user/newPassword`, {
+      .put(`${API_URL}/api/user/newPassword`, {
         headers: {
           rtoken: resetToken,
         },

@@ -15,6 +15,8 @@ import userImage from "../images/usuario.png";
 
 import style from "../styles/MyAccount.module.css";
 ///Esquema de validation con Yup al comienzo
+const API_URL = process.env.REACT_APP_API_URL;
+
 const validate = Yup.object({
   fname: Yup.string()
     .min(3, "El nombre debe tener al menos 3 caracteres")
@@ -74,7 +76,7 @@ const MyAccount = () => {
 
   const loadUserData = () => {
     axios
-      .get(`https://deployasa.onrender.com/api/users/me/${payload.id}`)
+      .get(`${API_URL}/api/users/me/${payload.id}`)
       .then((res) => {
         console.log(res.data); // Verifica que los campos se están recibiendo
         setUserData(res.data); // Asegúrate de incluir todos los datos en el estado
@@ -90,10 +92,7 @@ const MyAccount = () => {
       "No",
       () => {
         axios
-          .put(
-            `https://deployasa.onrender.com/api/users/me/${payload.id}`,
-            values
-          )
+          .put(`${API_URL}/api/users/me/${payload.id}`, values)
           .then((res) => {
             console.log(res);
             loadUserData();
@@ -113,7 +112,7 @@ const MyAccount = () => {
       async () => {
         try {
           const response = await axios.delete(
-            `https://deployasa.onrender.com/api/users/me/${payload.id}`,
+            `${API_URL}/api/users/me/${payload.id}`,
             {
               headers: { Authorization: `Bearer ${token}` },
             }

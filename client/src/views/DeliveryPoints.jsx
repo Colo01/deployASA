@@ -6,6 +6,8 @@ import filterFactory, { textFilter } from "react-bootstrap-table2-filter";
 import Button from "react-bootstrap/Button";
 import style from "../styles/BranchOffices.module.css";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const DeliveryPoints = () => {
   const [deliveryPoints, setDeliveryPoints] = useState([]);
 
@@ -15,7 +17,7 @@ const DeliveryPoints = () => {
 
   const loadDeliveryPoints = () => {
     axios
-      .get("https://deployasa.onrender.com/api/deliveryPoint") // Endpoint para obtener los puntos de entrega
+      .get(`${API_URL}/api/deliveryPoint`) // Endpoint para obtener los puntos de entrega
       .then((res) => {
         const points = res.data.data.map((point, index) => ({
           id: point._id.slice(-4),

@@ -9,6 +9,8 @@ import axios from "axios";
 import style from "../styles/General.module.css";
 import { Report } from "notiflix/build/notiflix-report-aio";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function AssistPassword() {
   const navigate = useNavigate();
 
@@ -23,7 +25,7 @@ function AssistPassword() {
     e.preventDefault();
     console.log(email);
     axios
-      .put(`https://deployasa.onrender.com/api/user/forgotPassword`, {
+      .put(`${API_URL}/api/user/forgotPassword`, {
         email: email,
       })
       .then((res) => {

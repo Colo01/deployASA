@@ -6,6 +6,8 @@ import CustomNavbar from "../commons/CustomNavbar";
 import axios from "axios";
 import style from "../styles/Users.module.css";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const HistoricalAppointments = () => {
   const [appointments, setAppointments] = useState([]);
   const [error, setError] = useState(null);
@@ -15,7 +17,7 @@ const HistoricalAppointments = () => {
       try {
         const token = JSON.parse(localStorage.getItem("user")).data.token;
         const response = await axios.get(
-          "https://deployasa.onrender.com/api/admin/appointments/history",
+          `${API_URL}/api/admin/appointments/history`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

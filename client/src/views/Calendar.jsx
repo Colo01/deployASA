@@ -12,6 +12,8 @@ import { Report } from "notiflix/build/notiflix-report-aio";
 import { useNavigate } from "react-router-dom";
 import { Confirm } from "notiflix/build/notiflix-confirm-aio";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const Calendar = () => {
   const [offices, setOffices] = useState([]);
   const [appointments, setAppointments] = useState([]);
@@ -34,7 +36,7 @@ const Calendar = () => {
 
   const loadOffices = () => {
     axios
-      .get("https://deployasa.onrender.com/api/deliveryPoint", {
+      .get(`${API_URL}/api/deliveryPoint`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -54,7 +56,7 @@ const Calendar = () => {
 
     axios
       .get(
-        `https://deployasa.onrender.com/api/availableAppointments?deliveryPointId=${officeId}`, // ✅ Ruta corregida
+        `${API_URL}/api/availableAppointments?deliveryPointId=${officeId}`, // ✅ Ruta corregida
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((res) => {
@@ -102,7 +104,7 @@ const Calendar = () => {
       async () => {
         try {
           const response = await axios.post(
-            "https://deployasa.onrender.com/api/admin/appointments/reserve", // 🔥 RUTA CORREGIDA
+            `${API_URL}/api/admin/appointments/reserve`, // 🔥 RUTA CORREGIDA
             { userId, appointmentId },
             { headers: { Authorization: `Bearer ${user.data.token}` } }
           );

@@ -7,6 +7,8 @@ import CustomNavbar from "../commons/CustomNavbar";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import style from "../styles/MyAppointments.module.css";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const MyAppointments = () => {
   const [appointments, setAppointments] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -16,7 +18,7 @@ const MyAppointments = () => {
     try {
       const userId = JSON.parse(localStorage.getItem("user")).data.id;
       const response = await axios.get(
-        `https://deployasa.onrender.com/api/admin/appointments/myAppointments?userId=${userId}`, // 🔥 RUTA CORREGIDA
+        `${API_URL}/api/admin/appointments/myAppointments?userId=${userId}`, // 🔥 RUTA CORREGIDA
         {
           headers: { Authorization: `Bearer ${token}` },
         }

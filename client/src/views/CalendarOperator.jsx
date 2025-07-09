@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import style from "../styles/Users.module.css";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const CalendarOperator = () => {
   const pickedBranchOffice = useSelector(
     (state) => state.branchOffice.clickedOffice
@@ -14,7 +16,7 @@ const CalendarOperator = () => {
   const loadAppointments = () => {
     axios
       .get(
-        `https://deployasa.onrender.com/api/availableAppointment?deliveryPointId=${pickedBranchOffice._id}`
+        `${API_URL}/api/availableAppointment?deliveryPointId=${pickedBranchOffice._id}`
       )
       .then((response) => {
         setAvailableAppointments(response.data.data);

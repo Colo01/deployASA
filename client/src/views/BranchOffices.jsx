@@ -13,6 +13,8 @@ import parseJwt from "../hooks/parseJwt";
 
 import style from "../styles/BranchOffices.module.css";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const BranchOffices = ({ selectOffice }) => {
   const [offices, setOffices] = useState([]);
   const [load, setLoad] = useState(true);
@@ -26,7 +28,7 @@ const BranchOffices = ({ selectOffice }) => {
 
   const loadOffices = () => {
     axios
-      .get("https://deployasa.onrender.com/api/deliveryPoint", {
+      .get(`${API_URL}/api/deliveryPoint`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -61,7 +63,7 @@ const BranchOffices = ({ selectOffice }) => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`https://deployasa.onrender.com/api/deliveryPoint/${id}`, {
+      .delete(`${API_URL}/api/deliveryPoint/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {

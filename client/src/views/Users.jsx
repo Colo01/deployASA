@@ -18,6 +18,7 @@ import { Confirm } from "notiflix/build/notiflix-confirm-aio";
 
 import style from "../styles/Users.module.css";
 
+const API_URL = process.env.REACT_APP_API_URL;
 const Users = () => {
   const [usersRaw, setUsersRaw] = useState([]);
   const [users, setUsers] = useState([]);
@@ -34,9 +35,7 @@ const Users = () => {
 
   const loadUsers = () => {
     axios
-      .get(
-        `https://deployasa.onrender.com/api/users/admin/${payload.id}/showUsers`
-      )
+      .get(`${API_URL}/api/users/admin/${payload.id}/showUsers`)
       .then((res) => {
         console.log(res.data.data);
         setUsersRaw(res.data.data);
@@ -82,9 +81,7 @@ const Users = () => {
       "No",
       () => {
         axios
-          .delete(
-            `https://deployasa.onrender.com/api/users/admin/${payload.id}/delete/${id}`
-          )
+          .delete(`${API_URL}/api/users/admin/${payload.id}/delete/${id}`)
           .then((res) => {
             console.log(res);
             setSelectedUser({});
