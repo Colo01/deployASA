@@ -23,7 +23,7 @@ function AssistPassword() {
     e.preventDefault();
     console.log(email);
     axios
-      .put(`http://localhost:5000/api/user/forgotPassword`, {
+      .put(`https://deployasa.onrender.com/api/user/forgotPassword`, {
         email: email,
       })
       .then((res) => {

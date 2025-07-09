@@ -26,7 +26,7 @@ const BranchOffices = ({ selectOffice }) => {
 
   const loadOffices = () => {
     axios
-      .get("http://localhost:5000/api/deliveryPoint", {
+      .get("https://deployasa.onrender.com/api/deliveryPoint", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -61,7 +61,7 @@ const BranchOffices = ({ selectOffice }) => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:5000/api/deliveryPoint/${id}`, {
+      .delete(`https://deployasa.onrender.com/api/deliveryPoint/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {

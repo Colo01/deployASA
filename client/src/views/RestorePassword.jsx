@@ -33,12 +33,12 @@ function RestorePassword() {
     console.log(resetToken);
 
     axios
-      .put(`http://localhost:5000/api/user/newPassword`, {
+      .put(`https://deployasa.onrender.com/api/user/newPassword`, {
         headers: {
-          "rtoken": resetToken,
+          rtoken: resetToken,
         },
         body: {
-          "password": password,
+          password: password,
         },
       })
       .then((res) => {

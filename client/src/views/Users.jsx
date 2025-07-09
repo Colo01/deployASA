@@ -34,7 +34,9 @@ const Users = () => {
 
   const loadUsers = () => {
     axios
-      .get(`http://localhost:5000/api/users/admin/${payload.id}/showUsers`)
+      .get(
+        `https://deployasa.onrender.com/api/users/admin/${payload.id}/showUsers`
+      )
       .then((res) => {
         console.log(res.data.data);
         setUsersRaw(res.data.data);
@@ -81,7 +83,7 @@ const Users = () => {
       () => {
         axios
           .delete(
-            `http://localhost:5000/api/users/admin/${payload.id}/delete/${id}`
+            `https://deployasa.onrender.com/api/users/admin/${payload.id}/delete/${id}`
           )
           .then((res) => {
             console.log(res);

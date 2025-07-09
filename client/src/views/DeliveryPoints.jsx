@@ -15,7 +15,7 @@ const DeliveryPoints = () => {
 
   const loadDeliveryPoints = () => {
     axios
-      .get("http://localhost:5000/api/deliveryPoint") // Endpoint para obtener los puntos de entrega
+      .get("https://deployasa.onrender.com/api/deliveryPoint") // Endpoint para obtener los puntos de entrega
       .then((res) => {
         const points = res.data.data.map((point, index) => ({
           id: point._id.slice(-4),

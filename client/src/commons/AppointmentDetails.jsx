@@ -58,7 +58,7 @@ const AppointmentDetails = () => {
 
   const handleSaveAppointment = () => {
     axios
-      .post(`http://localhost:5000/api/appointment/${user.id}`, {
+      .post(`https://deployasa.onrender.com/api/appointment/${user.id}`, {
         date: pickedDate.date,
         month: pickedDate.month,
         year: pickedDate.year,
@@ -88,7 +88,7 @@ const AppointmentDetails = () => {
   const handleConfirm = () => {
     axios
       .put(
-        `http://localhost:5000/api/appointment/${user.id}/myAppointment/confirmed`,
+        `https://deployasa.onrender.com/api/appointment/${user.id}/myAppointment/confirmed`,
         {
           id: appointmentId,
         }
@@ -115,7 +115,7 @@ const AppointmentDetails = () => {
   const handleCancel = () => {
     axios
       .delete(
-        `http://localhost:5000/api/appointment/${user.id}/myAppointment/deleteAppointment`,
+        `https://deployasa.onrender.com/api/appointment/${user.id}/myAppointment/deleteAppointment`,
         {
           data: {
             appointId: appointmentId,

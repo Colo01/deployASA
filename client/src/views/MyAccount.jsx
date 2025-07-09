@@ -74,7 +74,7 @@ const MyAccount = () => {
 
   const loadUserData = () => {
     axios
-      .get(`http://localhost:5000/api/users/me/${payload.id}`)
+      .get(`https://deployasa.onrender.com/api/users/me/${payload.id}`)
       .then((res) => {
         console.log(res.data); // Verifica que los campos se están recibiendo
         setUserData(res.data); // Asegúrate de incluir todos los datos en el estado
@@ -90,7 +90,10 @@ const MyAccount = () => {
       "No",
       () => {
         axios
-          .put(`http://localhost:5000/api/users/me/${payload.id}`, values)
+          .put(
+            `https://deployasa.onrender.com/api/users/me/${payload.id}`,
+            values
+          )
           .then((res) => {
             console.log(res);
             loadUserData();
@@ -110,7 +113,7 @@ const MyAccount = () => {
       async () => {
         try {
           const response = await axios.delete(
-            `http://localhost:5000/api/users/me/${payload.id}`,
+            `https://deployasa.onrender.com/api/users/me/${payload.id}`,
             {
               headers: { Authorization: `Bearer ${token}` },
             }

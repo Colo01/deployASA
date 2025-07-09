@@ -1,20 +1,26 @@
-import { createAsyncThunk, createReducer } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
+import axios from "axios";
 
 // Obtener turnos disponibles
-export const fetchAppointments = createAsyncThunk("FETCH_APPOINTMENTS", async (deliveryPointId, thunkAPI) => {
-  try {
-    const token = JSON.parse(localStorage.getItem("user")).data.token; // Obtener el token
-    const response = await axios.get(`http://localhost:5000/api/availableAppointments?deliveryPointId=${deliveryPointId}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    return response.data; // Retornar los turnos disponibles
-  } catch (error) {
-    return thunkAPI.rejectWithValue(error.response.data);
+export const fetchAppointments = createAsyncThunk(
+  "FETCH_APPOINTMENTS",
+  async (deliveryPointId, thunkAPI) => {
+    try {
+      const token = JSON.parse(localStorage.getItem("user")).data.token; // Obtener el token
+      const response = await axios.get(
+        `https://deployasa.onrender.com/api/availableAppointments?deliveryPointId=${deliveryPointId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      return response.data; // Retornar los turnos disponibles
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
   }
-});
+);
 
 // Reiniciar el estado de turnos
 export const emptyAppointment = createAsyncThunk("EMPTY_APPOINTMENT", () => {

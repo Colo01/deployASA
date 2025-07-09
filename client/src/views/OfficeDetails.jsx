@@ -56,20 +56,20 @@ const OfficeDetails = ({ office, selectOffice }) => {
       () => {
         axios
           .put(
-            `http://localhost:5000/api/branchOffice/admin/${payload.id}/${office._id}`,
+            `https://deployasa.onrender.com/api/branchOffice/admin/${payload.id}/${office._id}`,
             values
           )
           .then(() => {
             axios
               .put(
-                `http://localhost:5000/api/branchOffice/admin/${payload.id}/showBranch/${office._id}`,
+                `https://deployasa.onrender.com/api/branchOffice/admin/${payload.id}/showBranch/${office._id}`,
                 selectedOperator
               )
               .then((res) => console.log(res));
           })
           .then(() => {
             axios
-              .get(`http://localhost:5000/api/branchOffice/showBranch`)
+              .get(`https://deployasa.onrender.com/api/branchOffice/showBranch`)
               .then((res) => res.data.data)
               .then(
                 (updatedOffices) =>
@@ -88,7 +88,9 @@ const OfficeDetails = ({ office, selectOffice }) => {
 
   const loadAssignedOperator = () => {
     axios
-      .get(`http://localhost:5000/api/users/admin/${payload.id}/showUsers`)
+      .get(
+        `https://deployasa.onrender.com/api/users/admin/${payload.id}/showUsers`
+      )
       .then((res) => {
         return res.data.data;
       })
@@ -106,7 +108,7 @@ const OfficeDetails = ({ office, selectOffice }) => {
   const loadOperatorsList = () => {
     axios
       .get(
-        `http://localhost:5000/api/branchOffice/admin/${payload.id}/showBranch/${office._id}/operator`
+        `https://deployasa.onrender.com/api/branchOffice/admin/${payload.id}/showBranch/${office._id}/operator`
       )
       .then((res) => {
         console.log(res.data.data);

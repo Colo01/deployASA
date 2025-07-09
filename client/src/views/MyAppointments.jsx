@@ -16,7 +16,7 @@ const MyAppointments = () => {
     try {
       const userId = JSON.parse(localStorage.getItem("user")).data.id;
       const response = await axios.get(
-        `http://localhost:5000/api/admin/appointments/myAppointments?userId=${userId}`, // 🔥 RUTA CORREGIDA
+        `https://deployasa.onrender.com/api/admin/appointments/myAppointments?userId=${userId}`, // 🔥 RUTA CORREGIDA
         {
           headers: { Authorization: `Bearer ${token}` },
         }

@@ -13,7 +13,9 @@ const CalendarOperator = () => {
 
   const loadAppointments = () => {
     axios
-      .get(`http://localhost:5000/api/availableAppointment?deliveryPointId=${pickedBranchOffice._id}`)
+      .get(
+        `https://deployasa.onrender.com/api/availableAppointment?deliveryPointId=${pickedBranchOffice._id}`
+      )
       .then((response) => {
         setAvailableAppointments(response.data.data);
       })

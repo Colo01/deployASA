@@ -19,7 +19,7 @@ const OfficeOperator = () => {
   const loadAppointments = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/appointment/all"
+        "https://deployasa.onrender.com/api/appointment/all"
       );
       const appointmentData = response.data.data.map((appointment) => ({
         _id: appointment._id,
@@ -67,9 +67,12 @@ const OfficeOperator = () => {
       "No",
       () => {
         axios
-          .put(`http://localhost:5000/api/appointment/confirmAttendance`, {
-            appointmentId: id,
-          })
+          .put(
+            `https://deployasa.onrender.com/api/appointment/confirmAttendance`,
+            {
+              appointmentId: id,
+            }
+          )
           .then(() => {
             Notiflix.Notify.success("Asistencia confirmada con éxito.");
             setLoad(!load);
@@ -93,7 +96,7 @@ const OfficeOperator = () => {
       "No",
       () => {
         axios
-          .put(`http://localhost:5000/api/appointment/markAbsent`, {
+          .put(`https://deployasa.onrender.com/api/appointment/markAbsent`, {
             appointmentId: id,
           })
           .then(() => {

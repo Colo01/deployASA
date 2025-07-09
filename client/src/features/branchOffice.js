@@ -8,7 +8,7 @@ export const fetchBranchOffices = createAsyncThunk(
     try {
       const token = JSON.parse(localStorage.getItem("user")).data.token;
       const response = await axios.get(
-        "http://localhost:5000/api/deliveryPoint",
+        "https://deployasa.onrender.com/api/deliveryPoint",
         {
           headers: { Authorization: `Bearer ${token}` },
         }

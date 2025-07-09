@@ -15,7 +15,7 @@ const HistoricalAppointments = () => {
       try {
         const token = JSON.parse(localStorage.getItem("user")).data.token;
         const response = await axios.get(
-          "http://localhost:5000/api/admin/appointments/history",
+          "https://deployasa.onrender.com/api/admin/appointments/history",
           {
             headers: {
               Authorization: `Bearer ${token}`,

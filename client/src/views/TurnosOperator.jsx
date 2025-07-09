@@ -16,7 +16,7 @@ const TurnosOperator = () => {
       try {
         const token = JSON.parse(localStorage.getItem("user")).data.token;
         const response = await axios.get(
-          "http://localhost:5000/api/admin/appointments",
+          "https://deployasa.onrender.com/api/admin/appointments",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -52,7 +52,7 @@ const TurnosOperator = () => {
         try {
           const token = JSON.parse(localStorage.getItem("user")).data.token;
           await axios.put(
-            `http://localhost:5000/api/admin/appointments/${id}/mark`,
+            `https://deployasa.onrender.com/api/admin/appointments/${id}/mark`,
             { action },
             {
               headers: {

@@ -73,7 +73,7 @@ const AppointmentDetailsOperator = () => {
   // RUTA A CORREGIR - ES LA QUE PIDE AL BACK EL ARREGLO DE TURNOS PARA UN DIA Y HORARIO DETERMINADOS
 
   /*  const getAppointments = () => {
-      axios.get(`http://localhost:5000/api/appointment/62c7123cc261b4d23d5b93a9/dayAppointments`, {
+      axios.get(`https://deployasa.onrender.com/api/appointment/62c7123cc261b4d23d5b93a9/dayAppointments`, {
         headers: {
           date: '27',
           month: '6',
@@ -94,7 +94,7 @@ const AppointmentDetailsOperator = () => {
   const handleAssitance = (appointment) => {
     axios
       .put(
-        `http://localhost:5000/api/appointment/${user.id}/showAppointments`,
+        `https://deployasa.onrender.com/api/appointment/${user.id}/showAppointments`,
         {
           id: appointment,
         }
@@ -113,7 +113,7 @@ const AppointmentDetailsOperator = () => {
   // ESTA FUNCION PIDE AL BACK DATOS COPLETOS DEL USUARIO QUE POSEE UN DETERMINADO TURNO
 
   /* const getUser = (userId) => {
-    return axios.get(`http://localhost:5000/api/users/me/${userId}`)
+    return axios.get(`https://deployasa.onrender.com/api/users/me/${userId}`)
       .then(user => {
         console.log('USER ES ', user.data)
         return user.data

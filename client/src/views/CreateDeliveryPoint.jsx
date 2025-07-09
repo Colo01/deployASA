@@ -18,7 +18,7 @@ const CreateDeliveryPoint = () => {
   const handleSubmit = (values) => {
     axios
       .post(
-        `http://localhost:5000/api/deliveryPoint/admin/${payload.id}/add`,
+        `https://deployasa.onrender.com/api/deliveryPoint/admin/${payload.id}/add`,
         values
       )
       .then((res) => {

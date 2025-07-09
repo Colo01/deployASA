@@ -34,7 +34,7 @@ const Calendar = () => {
 
   const loadOffices = () => {
     axios
-      .get("http://localhost:5000/api/deliveryPoint", {
+      .get("https://deployasa.onrender.com/api/deliveryPoint", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -54,7 +54,7 @@ const Calendar = () => {
 
     axios
       .get(
-        `http://localhost:5000/api/availableAppointments?deliveryPointId=${officeId}`, // ✅ Ruta corregida
+        `https://deployasa.onrender.com/api/availableAppointments?deliveryPointId=${officeId}`, // ✅ Ruta corregida
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((res) => {
@@ -102,7 +102,7 @@ const Calendar = () => {
       async () => {
         try {
           const response = await axios.post(
-            "http://localhost:5000/api/admin/appointments/reserve", // 🔥 RUTA CORREGIDA
+            "https://deployasa.onrender.com/api/admin/appointments/reserve", // 🔥 RUTA CORREGIDA
             { userId, appointmentId },
             { headers: { Authorization: `Bearer ${user.data.token}` } }
           );
