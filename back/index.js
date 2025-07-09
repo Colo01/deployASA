@@ -14,7 +14,7 @@ const app = express(); // Inicializar express
 
 // Configuración específica para CORS
 const corsOptions = {
-  origin: "http://localhost:3000", // URL del frontend
+  origin: ["http://localhost:3000", "https://deployfrontasa.vercel.app/"], // URL del frontend
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true, // Permitir cookies si son necesarias
 };
